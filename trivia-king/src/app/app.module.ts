@@ -23,6 +23,7 @@ import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
 import { TriviaPanelComponent } from './trivia-panel/trivia-panel.component';
 import { QuestionForCategoryPipe } from './question-for-category.pipe';
+import { ShowAnswerDialogComponent } from './question/show-answer-dialog/show-answer-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { QuestionForCategoryPipe } from './question-for-category.pipe';
     CategoryComponent,
     QuestionComponent,
     TriviaPanelComponent,
-    QuestionForCategoryPipe
+    QuestionForCategoryPipe,
+    ShowAnswerDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,9 @@ import { QuestionForCategoryPipe } from './question-for-category.pipe';
     HttpModule,
     MaterialModule,
     NgReduxModule
+  ],
+  entryComponents: [
+    ShowAnswerDialogComponent
   ],
   providers: [Actions],
   bootstrap: [AppComponent]

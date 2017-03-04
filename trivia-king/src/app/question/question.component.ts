@@ -1,6 +1,8 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { TriviaQuestion } from '../model';
 import { Actions } from '../actions.service';
+import { MdDialog } from '@angular/material';
+import { ShowAnswerDialogComponent } from './show-answer-dialog/show-answer-dialog.component';
 
 @Component({
   selector: 'trk-question',
@@ -10,8 +12,16 @@ import { Actions } from '../actions.service';
 })
 export class QuestionComponent {
   @Input() question: TriviaQuestion;
+  constructor(private actions: Actions, public dialog: MdDialog) { }
 
-  constructor(private actions: Actions) { }
+  showIsOkToShowAnswerDialog(callback) {
+    const dialogRef = this.dialog.open(ShowAnswerDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === true) {
+        callback();
+      }
+    });
+  }
 
   changeToHidden() {
     this.actions.hideQuestion(this.question);
@@ -22,6 +32,8 @@ export class QuestionComponent {
   }
 
   changeToAnswer() {
-    this.actions.showAnswer(this.question);
+    this.showIsOkToShowAnswerDialog(() => {
+      this.actions.showAnswer(this.question);
+    });
   }
 }
