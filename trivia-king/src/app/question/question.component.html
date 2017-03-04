@@ -1,3 +1,13 @@
-<p>
-    {{question | json}}
-</p>
+<md-card>
+    <md-card-content [ngSwitch]="question.state">
+        <p md-line *ngSwitchCase="hidden">{{question.score}}</p>
+        <p md-line *ngSwitchCase="show_question">{{question.score}}</p>
+        <p md-line *ngSwitchCase="show_answer">{{question.score}}</p>
+    </md-card-content>
+
+    <md-card-actions>
+        <button md-button (click)="changeToHidden()">Score</button>
+        <button md-button (click)="changeToQuestion()">Question</button>
+        <button md-button (click)="changeToAnswer">Answer</button>
+    </md-card-actions>
+</md-card>

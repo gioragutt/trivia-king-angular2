@@ -1,4 +1,6 @@
-{{category}}
-<ul>
-    <trk-question *ngFor="let question of questions" [question]="question"></trk-question>
-</ul>
+<div class="category-container">
+    <h3>{{category}}</h3>
+    <div class="question-container">
+        <trk-question *ngFor="let question of questions" [question]="question"></trk-question>
+    </div>
+</div>

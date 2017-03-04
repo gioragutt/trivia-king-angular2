@@ -1,0 +1,10 @@
+.category-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.question-container {
+    flex: 1;
+    align-self: stretch;
+}

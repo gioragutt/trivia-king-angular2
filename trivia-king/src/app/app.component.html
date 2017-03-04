@@ -19,18 +19,7 @@
         <button md-menu-item>Option 2</button>
     </md-menu>
 
-    <trk-trivia-panel [categories]="categories$ | async"></trk-trivia-panel>
-
-    <md-card>
-        <button md-button>All</button>
-        <button md-raised-button>Of</button>
-        <button md-raised-button color="primary">The</button>
-        <button md-raised-button color="accent">Buttons</button>
+    <md-card style="max-width: 95%; min-width: 95%">
+        <trk-trivia-panel [categories]="categories$ | async"></trk-trivia-panel>
     </md-card>
-
-    <span class="done">
-    <button md-fab>
-      <md-icon>check circle</md-icon>
-    </button>
-  </span>
 </div>
