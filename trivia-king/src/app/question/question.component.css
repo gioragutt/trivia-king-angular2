@@ -1,4 +1,33 @@
 .mat-card {
-    width: 100px;
-    height: 150px;
+    width: 125px;
+    height: 100px;
+    padding: 12px;
+    /*margin: 5px;*/
+}
+
+.show-score {
+    text-align: center;
+    font-weight: bold;
+}
+
+.show-question,
+.show-answer {
+    text-align: right;
+    direction: rtl;
+}
+
+.question-cell {
+    display: flex;
+}
+
+.question-cell .question-button {
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    justify-content: center;
+}
+
+.question-cell .mat-button \deep\ span {
+    width: 100%;
+    height: 100%;
 }

@@ -3,14 +3,11 @@ import { TriviaQuestion, TriviaQuestions } from '../model';
 import { Actions } from '../actions.service';
 
 const updateQuestion = (state: TriviaQuestions, action: Action, update: any): TriviaQuestions => {
-    console.log(state);
-    return updateObject(state, {
-        questions: state.map((question: TriviaQuestion, index: number): TriviaQuestion => {
-            if (question === action.payload.question) {
-                return updateObject(action.payload.question, update);
-            }
-            return question;
-        })
+    return state.map((question: TriviaQuestion, index: number): TriviaQuestion => {
+        if (question === action.payload.question) {
+            return updateObject(action.payload.question, update);
+        }
+        return question;
     });
 };
 

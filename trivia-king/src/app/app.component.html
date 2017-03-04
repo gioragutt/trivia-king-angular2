@@ -19,7 +19,7 @@
         <button md-menu-item>Option 2</button>
     </md-menu>
 
-    <md-card style="max-width: 95%; min-width: 95%">
-        <trk-trivia-panel [categories]="categories$ | async"></trk-trivia-panel>
+    <md-card class="trivia-holder">
+        <trk-trivia-panel [categories]="categories$ | async" [questions]="questions$ | async"></trk-trivia-panel>
     </md-card>
 </div>

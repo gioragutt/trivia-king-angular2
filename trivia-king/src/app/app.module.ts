@@ -19,18 +19,18 @@ import { Actions } from './actions.service';
 import { reducers } from './reducers';
 
 import { CategoryComponent } from './category/category.component';
-import { CategoryContainerComponent } from './category-container/category-container.component'
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
 import { TriviaPanelComponent } from './trivia-panel/trivia-panel.component';
+import { QuestionForCategoryPipe } from './question-for-category.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
-    CategoryContainerComponent,
     QuestionComponent,
-    TriviaPanelComponent
+    TriviaPanelComponent,
+    QuestionForCategoryPipe
   ],
   imports: [
     BrowserModule,

@@ -9,5 +9,6 @@ import { TriviaQuestions } from './model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    @select('categories') readonly categories$: Observable<string[]>;
+    @select() categories$: Observable<string[]>;
+    @select() questions$: Observable<TriviaQuestions>;
 }
