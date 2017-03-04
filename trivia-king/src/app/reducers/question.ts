@@ -1,10 +1,11 @@
-import { IAppState, Action, updateObject, INITIAL_STATE } from './index';
-import { TriviaQuestion } from '../model';
+import { Action, updateObject, INITIAL_STATE } from './index';
+import { TriviaQuestion, TriviaQuestions } from '../model';
 import { Actions } from '../actions.service';
 
-const updateQuestion = (state: IAppState, action: Action, update: any): IAppState => {
+const updateQuestion = (state: TriviaQuestions, action: Action, update: any): TriviaQuestions => {
+    console.log(state);
     return updateObject(state, {
-        questions: state.questions.map((question: TriviaQuestion, index: number): TriviaQuestion => {
+        questions: state.map((question: TriviaQuestion, index: number): TriviaQuestion => {
             if (question === action.payload.question) {
                 return updateObject(action.payload.question, update);
             }
@@ -13,7 +14,7 @@ const updateQuestion = (state: IAppState, action: Action, update: any): IAppStat
     });
 };
 
-export const questions = (state: IAppState = INITIAL_STATE, action: Action): IAppState => {
+export const questions = (state: TriviaQuestions = [], action: Action): TriviaQuestions => {
     switch (action.type) {
         case Actions.QUESTION_HIDE:
             return updateQuestion(state, action, { state: 'hidden' });
