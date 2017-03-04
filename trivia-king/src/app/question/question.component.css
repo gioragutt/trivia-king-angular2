@@ -1,23 +1,46 @@
 .mat-card {
-    width: 125px;
-    height: 100px;
-    padding: 12px;
-    /*margin: 5px;*/
+    width: 150px;
+    height: 165px;
+    padding: 0px 12px;
+    margin: 10px 0px;
+}
+
+.show-score,
+.show-question,
+.show-answer {
+    width: 100%;
+    text-align: center;
+    direction: rtl;
+    font-weight: bold;
 }
 
 .show-score {
-    text-align: center;
-    font-weight: bold;
+    font-size: 72px;
+}
+
+.show-question {
+    color: white;
 }
 
 .show-question,
 .show-answer {
-    text-align: right;
-    direction: rtl;
+    font-size: 30px;
 }
 
 .question-cell {
     display: flex;
+}
+
+.question-cell.score {
+    background: dodgerblue;
+}
+
+.question-cell.question {
+    background: mediumpurple;
+}
+
+.question-cell.answer {
+    background: lightgreen;
 }
 
 .question-cell .question-button {

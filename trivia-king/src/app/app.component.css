@@ -1,7 +1,8 @@
 .trivia-holder {
-    min-width: 95%;
-    max-height: 95%;
+    min-width: 97%;
+    max-height: 97%;
     margin-top: 15px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    padding-top: 10px;
 }

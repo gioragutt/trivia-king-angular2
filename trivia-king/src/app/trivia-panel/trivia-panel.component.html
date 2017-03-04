@@ -2,7 +2,7 @@
 <!--<md-grid-tile *ngFor="let category of categories">-->
 <div class="flex-container">
     <div *ngFor="let category of categories" class="flex-column">
-        {{category}}
+        <md-card class="category-name">{{category}}</md-card>
         <trk-category *ngIf="category" [categoryName]="category" [questions]="questions | questionForCategory:category"></trk-category>
     </div>
 </div>
