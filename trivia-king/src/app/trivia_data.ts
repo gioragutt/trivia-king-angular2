@@ -10,7 +10,7 @@ export const MockTriviaCategories: string[] = function() {
 
 const stringOfRandomSizeBetween = (min: number, max: number): string => {
     let text = '';
-    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const possible = 'קראטוןםפשדגכעיחלךףזסבהנמצתץ0123456789          ';
 
     for (let i = 0; i < Math.random() * 100; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -25,10 +25,10 @@ export const MockTriviaData: TriviaQuestions = function() {
         for (let i = 1; i <= 5; ++i) {
             questions.push({
                 score: 100 * i,
-                answer: 'A: ' + stringOfRandomSizeBetween(10, 50),
-                question: 'Q: ' + stringOfRandomSizeBetween(10, 50),
+                answer: 'תשובה: ' + stringOfRandomSizeBetween(10, 50),
+                question: 'שאלה: ' + stringOfRandomSizeBetween(10, 50),
                 category,
-                state: 'show_answer'
+                state: 'hidden'
             });
         }
     });
