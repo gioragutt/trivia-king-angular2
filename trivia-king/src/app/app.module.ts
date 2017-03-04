@@ -48,13 +48,13 @@ import { ShowAnswerDialogComponent } from './question/show-answer-dialog/show-an
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(ngRedux: NgRedux<IAppState>) {
+  constructor(ngRedux: NgRedux<IAppState>, private devTools: DevToolsExtension) {
 
     const rootReducer = combineReducers<IAppState>({
       questions: reducers.questions,
       categories: reducers.categories
     });
 
-    ngRedux.configureStore(rootReducer, INITIAL_STATE, [ createLogger() ]);
+    ngRedux.configureStore(rootReducer, INITIAL_STATE, [createLogger()], [devTools.enhancer()]);
   }
 };
