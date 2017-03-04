@@ -1,13 +1,5 @@
 import { TriviaQuestions } from './model';
 
-export const MockTriviaCategories: string[] = function() {
-    const categories: string[] = [];
-    for (let i = 1; i <= 10; ++i) {
-        categories.push('category' + i);
-    }
-    return categories;
-}();
-
 const stringOfRandomSizeBetween = (min: number, max: number): string => {
     let text = '';
     const possible = 'קראטוןםפשדגכעיחלךףזסבהנמצתץ0123456789          ';
@@ -19,16 +11,23 @@ const stringOfRandomSizeBetween = (min: number, max: number): string => {
     return text;
 };
 
+export const MockTriviaCategories: string[] = function() {
+    const categories: string[] = [];
+    for (let i = 1; i <= 10; ++i) {
+        categories.push(stringOfRandomSizeBetween(10, 20));
+    }
+    return categories;
+}();
+
 export const MockTriviaData: TriviaQuestions = function() {
     const questions: TriviaQuestions = [];
     MockTriviaCategories.forEach((category: string, index: number) => {
         for (let i = 1; i <= 5; ++i) {
             questions.push({
                 score: 100 * i,
-                answer: 'תשובה: ' + stringOfRandomSizeBetween(10, 50),
-                question: 'שאלה: ' + stringOfRandomSizeBetween(10, 50),
-                category,
-                state: 'hidden'
+                answer: stringOfRandomSizeBetween(10, 50),
+                question: stringOfRandomSizeBetween(10, 50),
+                category
             });
         }
     });

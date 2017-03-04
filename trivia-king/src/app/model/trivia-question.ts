@@ -5,7 +5,7 @@ export interface TriviaQuestion {
     answer: string;
     category: string;
     score: number;
-    state: TriviaQuestionState;
+    state?: TriviaQuestionState;
 };
 
 export type TriviaQuestions = TriviaQuestion[];
