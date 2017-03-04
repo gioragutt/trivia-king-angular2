@@ -25,6 +25,6 @@ export class CategoryContainerComponent implements OnInit {
   }
 
   constructor(private ngRedux: NgRedux<IAppState>) {
-    this.questions$ = this.ngRedux.select('questions');
+    this.questions$ = this.ngRedux.select(state => state.questions);
   };
 };
