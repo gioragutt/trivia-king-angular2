@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { TriviaQuestion } from '../model';
 import { Actions } from '../actions.service';
 
 @Component({
   selector: 'trk-question',
   templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  styleUrls: ['./question.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionComponent {
   @Input() question: TriviaQuestion;

@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'trk-trivia-panel',
   templateUrl: './trivia-panel.component.html',
-  styleUrls: ['./trivia-panel.component.css']
+  styleUrls: ['./trivia-panel.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TriviaPanelComponent {
   @Input() categories: Array<string>;
