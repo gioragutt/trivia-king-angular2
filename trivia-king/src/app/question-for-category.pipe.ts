@@ -11,15 +11,8 @@ export class QuestionForCategoryPipe implements PipeTransform {
       return value;
     }
 
-    let allQuestions = [];
-    if (Array.isArray(value)) {
-      allQuestions = value;
-    } else {
-      allQuestions = value.questions;
-    }
-
+    const allQuestions: TriviaQuestions = value;
     const category: string = args;
     return allQuestions.filter((question: TriviaQuestion) => question.category === category);
   }
-
 }
