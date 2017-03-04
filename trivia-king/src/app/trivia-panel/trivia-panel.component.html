@@ -1,0 +1,6 @@
+<md-grid-list [cols]="categories.length" rowHeight="100px">
+    <md-grid-tile *ngFor="let category of categories">
+        {{category}}
+        <trk-category-container [category]="category"></trk-category-container>
+    </md-grid-tile>
+</md-grid-list>

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { select } from '@angular-redux/store';
+import { Observable } from 'rxjs/Observable';
+import { TriviaQuestions } from './model';
 
 @Component({
   selector: 'trk-root',
@@ -6,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'trk works!';
+    @select('categories') readonly categories$: Observable<string[]>;
 }

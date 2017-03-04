@@ -1,3 +1,36 @@
-<h1>
-  {{title}}
-</h1>
+<!--<ul>
+    <li *ngFor="let category of categories$ | async">
+        {{category}}
+        <trk-category-container [category]="category"></trk-category-container>
+    </li>
+</ul>-->
+
+<div>
+    <md-toolbar color="primary">
+        <span><md-icon>mood</md-icon></span>
+        <h1>מלך הטריוויה 2017</h1>
+        <button md-icon-button [md-menu-trigger-for]="menu">
+            <md-icon>more_vert</md-icon>
+        </button>
+    </md-toolbar>
+
+    <md-menu x-position="before" #menu="mdMenu">
+        <button md-menu-item>Option 1</button>
+        <button md-menu-item>Option 2</button>
+    </md-menu>
+
+    <trk-trivia-panel [categories]="categories$ | async"></trk-trivia-panel>
+
+    <md-card>
+        <button md-button>All</button>
+        <button md-raised-button>Of</button>
+        <button md-raised-button color="primary">The</button>
+        <button md-raised-button color="accent">Buttons</button>
+    </md-card>
+
+    <span class="done">
+    <button md-fab>
+      <md-icon>check circle</md-icon>
+    </button>
+  </span>
+</div>
