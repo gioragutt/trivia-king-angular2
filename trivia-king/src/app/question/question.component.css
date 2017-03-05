@@ -4,7 +4,9 @@
     padding: 0px 12px;
     margin: 10px 0px;
 }
-
+/*
+for 6 questions, changed height from 165px to 135 px;
+*/
 .show-score,
 .show-question,
 .show-answer {
