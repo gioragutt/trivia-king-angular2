@@ -2,7 +2,7 @@ import { TriviaQuestions } from './index';
 
 export interface TriviaTeam {
     name: string;
-    correct_answers: TriviaQuestions;
+    correctAnswers: TriviaQuestions;
 }
 
 export type TriviaTeams = TriviaTeam[];
