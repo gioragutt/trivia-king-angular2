@@ -9,6 +9,7 @@
     <md-toolbar color="primary">
         <span><md-icon>mood</md-icon></span>
         <h1>מלך הטריוויה 2017</h1>
+        <trk-header-score-board></trk-header-score-board>
         <button md-icon-button [md-menu-trigger-for]="menu">
             <md-icon>more_vert</md-icon>
         </button>
@@ -19,7 +20,5 @@
         <button md-menu-item>Option 2</button>
     </md-menu>
 
-    <md-card class="trivia-holder">
-        <trk-trivia-panel [categories]="categories$ | async" [questions]="questions$ | async"></trk-trivia-panel>
-    </md-card>
+    <router-outlet></router-outlet>
 </div>

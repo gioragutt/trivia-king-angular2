@@ -26,6 +26,11 @@ import { QuestionForCategoryPipe } from './question-for-category.pipe';
 import { ShowAnswerDialogComponent } from './question/show-answer-dialog/show-answer-dialog.component';
 import { HeaderScoreBoardComponent } from './header-score-board/header-score-board.component';
 import { TeamScoreComponent } from './header-score-board/team-score/team-score.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { SetupPageComponent } from './pages/setup-page/setup-page.component';
+import { TriviaPageComponent } from './pages/trivia-page/trivia-page.component';
+
+import { AppRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -37,13 +42,17 @@ import { TeamScoreComponent } from './header-score-board/team-score/team-score.c
     ShowAnswerDialogComponent,
     HeaderScoreBoardComponent,
     TeamScoreComponent,
+    HomePageComponent,
+    SetupPageComponent,
+    TriviaPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule,
-    NgReduxModule
+    NgReduxModule,
+    AppRoutes
   ],
   entryComponents: [
     ShowAnswerDialogComponent
