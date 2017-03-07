@@ -21,7 +21,17 @@ export const updateObject = (object: any, update: any): any => {
 export const INITIAL_STATE: IAppState = {
     questions: MockTriviaData,
     categories: MockTriviaCategories,
-    teams: []
+    teams: [
+        {
+            name: 'team1', correctAnswers: []
+        },
+        {
+            name: 'team2', correctAnswers: []
+        },
+        {
+            name: 'team3', correctAnswers: []
+        }
+    ]
 };
 
 const emptyReducer = (state = INITIAL_STATE, action) => state;
