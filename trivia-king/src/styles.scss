@@ -1,7 +1,79 @@
 @import '~@angular/material/core/theming/all-theme';
-@include md-core();
-$primary: md-palette($md-green, A400);
-$accent: md-palette($md-light-blue, 600, A100, A400);
-$warn: md-palette($md-red, 600);
-$theme: md-light-theme($primary, $accent, $warn);
+@include mat-core();
+
+$logo-blue-color: rgb(45, 145, 200);
+$logo-yellow-color: rgb(225, 230, 105);
+
+$logo-blue: (
+  50: $logo-blue-color,
+  100: #bbdefb,
+  200: #90caf9,
+  300: #64b5f6,
+  400: #42a5f5,
+  500: #2196f3,
+  600: #1e88e5,
+  700: #1976d2,
+  800: #1565c0,
+  900: #0d47a1,
+  A100: #82b1ff,
+  A200: #448aff,
+  A400: #2979ff,
+  A700: #2962ff,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$logo-yellow: (
+  50: $logo-yellow-color,
+  100: #fff9c4,
+  200: #fff59d,
+  300: #fff176,
+  400: #ffee58,
+  500: #ffeb3b,
+  600: #fdd835,
+  700: #fbc02d,
+  800: #f9a825,
+  900: #f57f17,
+  A100: #ffff8d,
+  A200: #ffff00,
+  A400: #ffea00,
+  A700: #ffd600,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: $black-87-opacity,
+    600: $black-87-opacity,
+    700: $black-87-opacity,
+    800: $black-87-opacity,
+    900: $black-87-opacity,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: $black-87-opacity,
+  )
+);
+
+// $primary: md-palette($md-green, A400);
+// $accent: md-palette($md-light-blue, 600, A100, A400);
+$primary: mat-palette($logo-blue, 50);
+$accent: mat-palette($logo-yellow, 50);
+$warn: mat-palette($mat-red, 600);
+$theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
