@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select } from '@angular-redux/store';
 import { Observable } from 'rxjs/Observable';
-import { TriviaQuestions, TriviaTeams, TriviaTeam } from '../model';
+import { TriviaQuestions, TriviaTeams, TriviaTeam } from '../../model';
 
 @Component({
   selector: 'trk-header-score-board',
