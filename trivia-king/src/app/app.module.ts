@@ -44,7 +44,7 @@ import { ShowAnswerDialogComponent } from './question/show-answer-dialog/show-an
   entryComponents: [
     ShowAnswerDialogComponent
   ],
-  providers: [QuestionActions],
+  providers: [QuestionActions, TeamActions],
   bootstrap: [AppComponent]
 })
 export class AppModule {

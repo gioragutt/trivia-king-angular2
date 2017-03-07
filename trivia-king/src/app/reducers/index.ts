@@ -1,5 +1,6 @@
-import { TriviaQuestions } from '../model';
+import { TriviaQuestions, TriviaTeams } from '../model';
 import { questions } from './question';
+import { teams } from './team';
 import { MockTriviaData, MockTriviaCategories } from '../trivia_data';
 
 export interface Action {
@@ -10,6 +11,7 @@ export interface Action {
 export interface IAppState {
     questions: TriviaQuestions;
     categories: string[];
+    teams: TriviaTeams;
 };
 
 export const updateObject = (object: any, update: any): any => {
@@ -18,12 +20,14 @@ export const updateObject = (object: any, update: any): any => {
 
 export const INITIAL_STATE: IAppState = {
     questions: MockTriviaData,
-    categories: MockTriviaCategories
+    categories: MockTriviaCategories,
+    teams: []
 };
 
 const emptyReducer = (state = INITIAL_STATE, action) => state;
 
 export const reducers = {
     questions,
-    categories: emptyReducer
+    categories: emptyReducer,
+    teams
 };
