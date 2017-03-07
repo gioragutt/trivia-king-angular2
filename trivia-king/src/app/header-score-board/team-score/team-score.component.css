@@ -1,0 +1,9 @@
+md-chip {
+  max-width: 350px;
+  max-height: 50px;
+}
+
+.score {
+    font-size: 36px;
+    line-height: 36px;
+}

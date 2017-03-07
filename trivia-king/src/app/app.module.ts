@@ -24,6 +24,8 @@ import { QuestionComponent } from './question/question.component';
 import { TriviaPanelComponent } from './trivia-panel/trivia-panel.component';
 import { QuestionForCategoryPipe } from './question-for-category.pipe';
 import { ShowAnswerDialogComponent } from './question/show-answer-dialog/show-answer-dialog.component';
+import { HeaderScoreBoardComponent } from './header-score-board/header-score-board.component';
+import { TeamScoreComponent } from './header-score-board/team-score/team-score.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ShowAnswerDialogComponent } from './question/show-answer-dialog/show-an
     QuestionComponent,
     TriviaPanelComponent,
     QuestionForCategoryPipe,
-    ShowAnswerDialogComponent
+    ShowAnswerDialogComponent,
+    HeaderScoreBoardComponent,
+    TeamScoreComponent,
   ],
   imports: [
     BrowserModule,
