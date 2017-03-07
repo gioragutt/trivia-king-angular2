@@ -1,8 +1,8 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { TriviaQuestion } from '../model';
-import { QuestionActions } from '../actions';
+import { TriviaQuestion } from '../../../model';
+import { QuestionActions } from '../../../actions';
 import { MdDialog } from '@angular/material';
-import { ShowAnswerDialogComponent } from './show-answer-dialog/show-answer-dialog.component';
+import { ShowAnswerDialogComponent } from '../index';
 
 @Component({
   selector: 'trk-question',

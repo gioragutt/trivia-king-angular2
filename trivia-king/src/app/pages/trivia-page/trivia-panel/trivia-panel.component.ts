@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { TriviaQuestions } from '../model';
+import { TriviaQuestions } from '../../../model';
 
 @Component({
   selector: 'trk-trivia-panel',

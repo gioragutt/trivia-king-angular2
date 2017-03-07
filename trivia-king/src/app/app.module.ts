@@ -15,21 +15,38 @@ import { IAppState, INITIAL_STATE } from './reducers';
 // Redux Dependencies
 import { combineReducers } from 'redux';
 import * as createLogger from 'redux-logger';
+
+// Redux Implementations
 import { QuestionActions, TeamActions } from './actions/';
 import { reducers } from './reducers';
 
-import { CategoryComponent } from './category/category.component';
+// App
 import { AppComponent } from './app.component';
-import { QuestionComponent } from './question/question.component';
-import { TriviaPanelComponent } from './trivia-panel/trivia-panel.component';
 import { QuestionForCategoryPipe } from './question-for-category.pipe';
-import { ShowAnswerDialogComponent } from './question/show-answer-dialog/show-answer-dialog.component';
-import { HeaderScoreBoardComponent } from './header-score-board/header-score-board.component';
-import { TeamScoreComponent } from './header-score-board/team-score/team-score.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { SetupPageComponent } from './pages/setup-page/setup-page.component';
-import { TriviaPageComponent } from './pages/trivia-page/trivia-page.component';
 
+// Toolbar
+import {
+  HeaderScoreBoardComponent,
+  TeamScoreComponent,
+  ToolbarComponent
+} from './toolbar';
+
+// Home Page
+import { HomePageComponent } from './pages/home-page';
+
+// Setup Page
+import { SetupPageComponent } from './pages/setup-page';
+
+// Trivia Page
+import {
+  TriviaPageComponent,
+  TriviaPanelComponent,
+  CategoryComponent,
+  QuestionComponent,
+  ShowAnswerDialogComponent,
+} from './pages/trivia-page';
+
+// Routes
 import { AppRoutes } from './app.routes';
 
 @NgModule({
@@ -44,7 +61,8 @@ import { AppRoutes } from './app.routes';
     TeamScoreComponent,
     HomePageComponent,
     SetupPageComponent,
-    TriviaPageComponent
+    TriviaPageComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

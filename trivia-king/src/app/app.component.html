@@ -1,24 +1,4 @@
-<!--<ul>
-    <li *ngFor="let category of categories$ | async">
-        {{category}}
-        <trk-category-container [category]="category"></trk-category-container>
-    </li>
-</ul>-->
-
 <div>
-    <md-toolbar color="primary">
-        <span><md-icon>mood</md-icon></span>
-        <h1>מלך הטריוויה 2017</h1>
-        <trk-header-score-board></trk-header-score-board>
-        <button md-icon-button [md-menu-trigger-for]="menu">
-            <md-icon>more_vert</md-icon>
-        </button>
-    </md-toolbar>
-
-    <md-menu x-position="before" #menu="mdMenu">
-        <button md-menu-item (click)="openCredit()">קרדיט</button>
-        <button md-menu-item>Option 2</button>
-    </md-menu>
-
+    <trk-toolbar></trk-toolbar>
     <router-outlet></router-outlet>
 </div>
