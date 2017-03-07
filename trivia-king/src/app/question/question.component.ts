@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { TriviaQuestion } from '../model';
-import { Actions } from '../actions.service';
+import { QuestionActions } from '../actions';
 import { MdDialog } from '@angular/material';
 import { ShowAnswerDialogComponent } from './show-answer-dialog/show-answer-dialog.component';
 
@@ -12,7 +12,7 @@ import { ShowAnswerDialogComponent } from './show-answer-dialog/show-answer-dial
 })
 export class QuestionComponent {
   @Input() question: TriviaQuestion;
-  constructor(private actions: Actions, public dialog: MdDialog) { }
+  constructor(private actions: QuestionActions, public dialog: MdDialog) { }
 
   showIsOkToShowAnswerDialog(callback) {
     const dialogRef = this.dialog.open(ShowAnswerDialogComponent);

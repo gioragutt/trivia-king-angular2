@@ -15,7 +15,7 @@ import { IAppState, INITIAL_STATE } from './reducers';
 // Redux Dependencies
 import { combineReducers } from 'redux';
 import * as createLogger from 'redux-logger';
-import { Actions } from './actions.service';
+import { QuestionActions, TeamActions } from './actions/';
 import { reducers } from './reducers';
 
 import { CategoryComponent } from './category/category.component';
@@ -44,7 +44,7 @@ import { ShowAnswerDialogComponent } from './question/show-answer-dialog/show-an
   entryComponents: [
     ShowAnswerDialogComponent
   ],
-  providers: [Actions],
+  providers: [QuestionActions],
   bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -52,7 +52,8 @@ export class AppModule {
 
     const rootReducer = combineReducers<IAppState>({
       questions: reducers.questions,
-      categories: reducers.categories
+      categories: reducers.categories,
+      teams: reducers.teams,
     });
 
     ngRedux.configureStore(rootReducer, INITIAL_STATE, [createLogger()], [devTools.enhancer()]);

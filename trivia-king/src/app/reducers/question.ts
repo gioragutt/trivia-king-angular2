@@ -1,6 +1,6 @@
-import { Action, updateObject, INITIAL_STATE } from './index';
+import { Action, updateObject } from './index';
 import { TriviaQuestion, TriviaQuestions } from '../model';
-import { Actions } from '../actions.service';
+import { QuestionActions } from '../actions';
 
 const updateQuestion = (state: TriviaQuestions, action: Action, update: any): TriviaQuestions => {
     return state.map((question: TriviaQuestion, index: number): TriviaQuestion => {
@@ -13,11 +13,11 @@ const updateQuestion = (state: TriviaQuestions, action: Action, update: any): Tr
 
 export const questions = (state: TriviaQuestions = [], action: Action): TriviaQuestions => {
     switch (action.type) {
-        case Actions.QUESTION_HIDE:
+        case QuestionActions.QUESTION_HIDE:
             return updateQuestion(state, action, { state: 'hidden' });
-        case Actions.QUESTION_SHOW_QUESTION:
+        case QuestionActions.QUESTION_SHOW_QUESTION:
             return updateQuestion(state, action, { state: 'show_question' });
-        case Actions.QUESTION_SHOW_ANSWER:
+        case QuestionActions.QUESTION_SHOW_ANSWER:
             return updateQuestion(state, action, { state: 'show_answer' });
     }
     return state;
