@@ -22,7 +22,6 @@ import { reducers } from './reducers';
 
 // App
 import { AppComponent } from './app.component';
-import { QuestionForCategoryPipe } from './question-for-category.pipe';
 
 // Toolbar
 import {
@@ -37,14 +36,7 @@ import { HomePageComponent } from './pages/home-page';
 // Setup Page
 import { SetupPageComponent } from './pages/setup-page';
 
-// Trivia Page
-import {
-  TriviaPageComponent,
-  TriviaPanelComponent,
-  CategoryComponent,
-  QuestionComponent,
-  ShowAnswerDialogComponent,
-} from './pages/trivia-page';
+import { TriviaPageModule } from './pages/trivia-page/trivia-page.module';
 
 // Routes
 import { AppRoutes } from './app.routes';
@@ -52,16 +44,10 @@ import { AppRoutes } from './app.routes';
 @NgModule({
   declarations: [
     AppComponent,
-    CategoryComponent,
-    QuestionComponent,
-    TriviaPanelComponent,
-    QuestionForCategoryPipe,
-    ShowAnswerDialogComponent,
     HeaderScoreBoardComponent,
     TeamScoreComponent,
     HomePageComponent,
     SetupPageComponent,
-    TriviaPageComponent,
     ToolbarComponent
   ],
   imports: [
@@ -70,10 +56,8 @@ import { AppRoutes } from './app.routes';
     HttpModule,
     MaterialModule,
     NgReduxModule,
-    AppRoutes
-  ],
-  entryComponents: [
-    ShowAnswerDialogComponent
+    AppRoutes,
+    TriviaPageModule,
   ],
   providers: [QuestionActions, TeamActions],
   bootstrap: [AppComponent]

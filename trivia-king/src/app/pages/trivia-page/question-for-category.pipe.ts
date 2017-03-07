@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TriviaQuestions, TriviaQuestion } from './model';
+import { TriviaQuestions, TriviaQuestion } from '../../model';
 
 @Pipe({
   name: 'questionForCategory'
