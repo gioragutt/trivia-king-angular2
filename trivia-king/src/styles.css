@@ -2,6 +2,8 @@
 
 /*@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';*/
 
+@import '~bootstrap/dist/css/bootstrap.css';
+
 body {
     margin: 0;
     font-family: Roboto, sans-serif;
