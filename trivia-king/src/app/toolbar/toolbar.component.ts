@@ -10,7 +10,7 @@ export class ToolbarComponent {
   constructor(public snackBar: MdSnackBar) { }
 
   openCredit() {
-    this.snackBar.open('נכתב על ידי: גיורא גוטצייט', 'סגור', {
+    this.snackBar.open('נכתב על ידי: גיורא גוטצייט ורון גרין', 'סגור', {
       duration: 3500,
     });
   }
