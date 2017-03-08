@@ -13,4 +13,13 @@ export class TeamActions {
   static TEAM_REMOVE = 'TEAM_REMOVE';
 
   constructor(private ngRedux: NgRedux<IAppState>) { }
+
+  addTeam(name: string) {
+    this.ngRedux.dispatch({
+      type: TeamActions.TEAM_ADD,
+      payload: {
+        name
+      }
+    });
+  }
 }
