@@ -1,0 +1,6 @@
+<form #teamForm="ngForm" (ngSubmit)="onAddTeam()">
+  <md-input-container class="example-full-width">
+    <input mdInput type="text" placeholder="שם הקבוצה" required minlength="4" maxlength="15" name="name" [(ngModel)]="teamName" #name="ngModel"/>
+  </md-input-container>
+  <button md-raised-button class="btn btn-primary" type="submit" [disabled]="!teamForm.form.valid">הוסף קבוצה</button>
+</form>
