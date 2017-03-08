@@ -5,6 +5,7 @@
       <p class="lead">יש להזין את הקבוצות שמשתתפות במשחק</p>
       <hr class="my-4">
       <trk-team-info-input></trk-team-info-input>
+      <trk-team-info-preview *ngFor="let team of teams$ | async" [team]="team"></trk-team-info-preview>
     </div>
   </div>
 </div>

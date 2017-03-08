@@ -41,6 +41,7 @@ import { TriviaPageModule } from './pages/trivia-page/trivia-page.module';
 // Routes
 import { AppRoutes } from './app.routes';
 import { TeamInfoInputComponent } from './pages/setup-page/team-info-input/team-info-input.component';
+import { TeamInfoPreviewComponent } from './pages/setup-page/team-info-preview/team-info-preview.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { TeamInfoInputComponent } from './pages/setup-page/team-info-input/team-
     SetupPageComponent,
     ToolbarComponent,
     TeamInfoInputComponent,
+    TeamInfoPreviewComponent
   ],
   imports: [
     BrowserModule,
