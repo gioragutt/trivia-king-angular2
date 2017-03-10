@@ -22,6 +22,7 @@ import { reducers } from './reducers';
 
 // App
 import { AppComponent } from './app.component';
+import { LocalStorageService } from './local-storage.service';
 
 // Toolbar
 import {
@@ -63,7 +64,7 @@ import { TeamInfoPreviewComponent } from './pages/setup-page/team-info-preview/t
     AppRoutes,
     TriviaPageModule,
   ],
-  providers: [QuestionActions, TeamActions],
+  providers: [QuestionActions, TeamActions, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
