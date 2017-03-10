@@ -6,6 +6,11 @@
       <hr class="my-4">
       <trk-team-info-input></trk-team-info-input>
       <trk-team-info-preview *ngFor="let team of teams$ | async" [team]="team"></trk-team-info-preview>
+      <hr class="my-4">
+      <p>לתחילת המשחק, לחצו על <b>התחל</b></p>
+      <p class="lead">
+        <a md-raised-button class="btn btn-primary" routerLink="/trivia" role="button">התחל</a>
+      </p>
     </div>
   </div>
 </div>
