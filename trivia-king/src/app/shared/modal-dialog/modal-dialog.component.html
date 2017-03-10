@@ -1,0 +1,7 @@
+<div *ngIf="config" [dir]="config.direction">
+  <h1 md-dialog-title>{{config.title}}</h1>
+  <div md-dialog-content>{{config.body}}</div>
+  <div md-dialog-actions>
+    <button *ngFor="let option of config.options | iterateObject" md-button (click)="dialogRef.close(option.value)">{{option.key}}</button>
+  </div>
+</div>
