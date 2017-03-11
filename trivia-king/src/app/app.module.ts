@@ -38,6 +38,7 @@ import { SetupPageComponent } from './pages/setup-page';
 import { AppRoutes } from './app.routes';
 import { TeamInfoInputComponent } from './pages/setup-page/team-info-input/team-info-input.component';
 import { TeamInfoPreviewComponent } from './pages/setup-page/team-info-preview/team-info-preview.component';
+import { TeamsManagementComponent } from './pages/setup-page/teams-management/teams-management.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { TeamInfoPreviewComponent } from './pages/setup-page/team-info-preview/t
     HomePageComponent,
     SetupPageComponent,
     TeamInfoInputComponent,
-    TeamInfoPreviewComponent
+    TeamInfoPreviewComponent,
+    TeamsManagementComponent
   ],
   imports: [
     BrowserModule,

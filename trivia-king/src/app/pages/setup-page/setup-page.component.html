@@ -4,16 +4,11 @@
       <h1 class="display-3">קבוצות</h1>
       <p class="lead">יש להזין את הקבוצות שמשתתפות במשחק</p>
       <hr class="my-4">
-      <trk-team-info-input></trk-team-info-input>
-      <md-list class="team-list">
-        <md-list-item *ngFor="let team of teams$ | async">
-          <trk-team-info-preview [team]="team"></trk-team-info-preview>
-        </md-list-item>
-      </md-list>
+      <trk-teams-management [teams]="teams$ | async"></trk-teams-management>
       <hr class="my-4">
       <p>לתחילת המשחק, לחצו על <b>התחל</b></p>
       <p class="lead">
-        <a md-raised-button class="btn btn-primary" routerLink="/trivia" role="button">התחל</a>
+        <a md-raised-button class="btn btn-primary" routerLink="/trivia" role="button" [disabled]="(teams$ | async).length <= 0">התחל</a>
       </p>
     </div>
   </div>
