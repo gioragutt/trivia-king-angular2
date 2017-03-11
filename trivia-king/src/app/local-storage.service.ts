@@ -11,6 +11,14 @@ export class LocalStorageService {
     }
   }
 
+  static removeFromLocalStorage(name: string) {
+    try {
+      localStorage.removeItem(name);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   static loadFromLocalStorage<T>(name: string): T | undefined {
     try {
       const serialized = localStorage.getItem(name);
@@ -27,6 +35,10 @@ export class LocalStorageService {
 
   saveToLocalStorage(name: string, data: any) {
     LocalStorageService.saveToLocalStorage(name, data);
+  }
+
+  removeFromLocalStorage(name: string) {
+    LocalStorageService.removeFromLocalStorage(name);
   }
 
   loadFromLocalStorage<T>(name: string): T | undefined {
