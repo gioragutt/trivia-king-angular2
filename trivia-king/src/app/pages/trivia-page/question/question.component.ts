@@ -17,14 +17,13 @@ export class QuestionComponent {
   showIsOkToShowAnswerDialog(callback) {
     const config: TrkModalDialogConfig = {
       title: 'שאלה',
+      body: 'האם להציג את הפתרון?',
       options: { 'כן': true, 'לא': false },
       direction: 'rtl'
     };
     const dialogRef = this.dialog.open(TrkModalDialogComponent, { data: config });
-    dialogRef.afterClosed().subscribe(result => {
-      if (result === true) {
-        callback();
-      }
+    dialogRef.afterClosed().filter(retval => retval === true).subscribe(result => {
+      callback();
     });
   }
 
