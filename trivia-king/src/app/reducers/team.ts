@@ -39,10 +39,7 @@ const renameTeam = (state: TriviaTeams, team: TriviaTeam, newName: string): Triv
 
 const removeCorrectAnswer = (state: TriviaTeams, question: TriviaQuestion): TriviaTeams => {
     return state.map((team: TriviaTeam): TriviaTeam => {
-        if (team.correctAnswers.includes(question)) {
-            return updateObject(team, { correctAnswers: team.correctAnswers.filter(q => q.id !== question.id) });
-        }
-        return team;
+        return updateObject(team, { correctAnswers: team.correctAnswers.filter(q => q.id !== question.id) });
     });
 };
 

@@ -25,7 +25,7 @@ export class QuestionResultDialogComponent {
         console.log('Received undefined configuration for the modal');
       }
       this.question = config.question;
-      const team = teams.find(t => t.correctAnswers.includes(this.question));
+      const team = teams.find(t => t.correctAnswers.find(q => q.id === this.question.id) !== undefined);
       if (team !== undefined) {
         this.selectedTeam = team.name;
       }
