@@ -1,1 +1,18 @@
-<p *ngIf="team">{{team.name}}</p>
+<div *ngIf="team">
+    <div *ngIf="isEditing">
+        <form #teamForm="ngForm" (ngSubmit)="onTeamRename()">
+            <md-input-container class="example-full-width">
+                <input mdInput type="text" placeholder="שם הקבוצה" required minlength="4" maxlength="15" name="name" [(ngModel)]="nameToEdit" #name="ngModel"/>
+            </md-input-container>
+            <button md-raised-button style="color: white" color="primary" type="submit" [disabled]="!teamForm.form.valid">עדכן</button>
+            <button md-raised-button color="warn" (click)="removeTeam()">מחק</button>
+            <button md-raised-button (click)="cancelRename()">בטל</button>
+        </form>
+    </div>
+    <div *ngIf="!isEditing">
+        <md-input-container class="example-full-width">
+            <input mdInput type="text" [placeholder]="team.name" disabled/>
+        </md-input-container>
+        <button md-raised-button class="btn btn-primary" (click)="onStartRename()">עדכן</button>
+    </div>
+</div>

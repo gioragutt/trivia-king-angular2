@@ -1,3 +1,9 @@
 .jumbo-container {
     padding: 20px;
 }
+
+.team-list {
+    width: 70%;
+    margin: auto;
+    padding-right: 20%;
+}
