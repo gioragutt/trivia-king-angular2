@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { SharedModule } from '../shared';
 
@@ -8,7 +9,7 @@ import { TeamScoreComponent } from './team-score/team-score.component';
 import { ToolbarComponent } from './toolbar.component';
 
 @NgModule({
-  imports: [CommonModule, SharedModule, MaterialModule],
+  imports: [CommonModule, SharedModule, MaterialModule, RouterModule],
   declarations: [HeaderScoreBoardComponent, TeamScoreComponent, ToolbarComponent],
   exports: [HeaderScoreBoardComponent, TeamScoreComponent, ToolbarComponent]
 })
