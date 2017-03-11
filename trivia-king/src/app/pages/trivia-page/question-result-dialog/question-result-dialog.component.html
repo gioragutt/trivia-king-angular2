@@ -1,0 +1,20 @@
+<div *ngIf="question" dir="rtl">
+  <h1 md-dialog-title>בחירת קבוצה</h1>
+  <div md-dialog-content>
+    <h6><b>השאלה הייתה:</b> {{question.question}}</h6>
+    <h6><b>התשובה היא:</b> {{question.answer}}</h6>
+    <div>
+      בחר בקבוצה שתקבל את <b>{{question.score}}</b> הנקודות:
+      <!--<br>-->
+      <md-select placeholder="קבוצה שענתה נכונה" [(ngModel)]="selectedTeam">
+        <md-option *ngFor="let team of teams$ | async" [value]="team.name">{{ team.name }}</md-option>
+      </md-select>
+    </div>
+  </div>
+  <div md-dialog-actions>
+    <button *ngIf="selectedTeam" md-raised-button color="primary" style="color: white" (click)="dialogRef.close(selectedTeam)">בחר ב-"{{selectedTeam}}"</button>
+    <button *ngIf="!selectedTeam" md-raised-button color="warn">יש לבחור קבוצה</button>
+    <button md-button md-dialog-close>בטל</button>
+    <button md-button (click)="dialogRef.close('')">בטל תשובה נכונה</button>
+  </div>
+</div>
