@@ -1,8 +1,9 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { TriviaQuestion } from '../../../model';
-import { QuestionActions } from '../../../actions';
+import { QuestionActions, TeamActions } from '../../../actions';
 import { MdDialog } from '@angular/material';
 import { TrkModalDialogComponent, TrkModalDialogConfig } from '../../../shared';
+import { QuestionResultDialogComponent, TrkQuestionResultDialogConfig } from '../index';
 
 @Component({
   selector: 'trk-question',
@@ -12,7 +13,11 @@ import { TrkModalDialogComponent, TrkModalDialogConfig } from '../../../shared';
 })
 export class QuestionComponent {
   @Input() question: TriviaQuestion;
-  constructor(private actions: QuestionActions, public dialog: MdDialog) { }
+  constructor(
+    private questionActions: QuestionActions,
+    private teamActions: TeamActions,
+    private dialog: MdDialog
+  ) { }
 
   showIsOkToShowAnswerDialog(callback) {
     const config: TrkModalDialogConfig = {
@@ -27,17 +32,28 @@ export class QuestionComponent {
     });
   }
 
-  changeToHidden() {
-    this.actions.hideQuestion(this.question);
+  showQuestionResult() {
+    const config: TrkQuestionResultDialogConfig = { question: this.question };
+    const dialogRef = this.dialog.open(QuestionResultDialogComponent, { data: config });
+    dialogRef.afterClosed().subscribe((teamName: string | undefined) => {
+      if (teamName === undefined) {
+        return;
+      }
+      if (teamName !== '') {
+        this.teamActions.assignCorrectAnswerToTeam(teamName, this.question);
+      } else {
+        this.teamActions.removeCorrectAnswer(this.question);
+      }
+    });
   }
 
   changeToQuestion() {
-    this.actions.showQuestion(this.question);
+    this.questionActions.showQuestion(this.question);
   }
 
   changeToAnswer() {
     this.showIsOkToShowAnswerDialog(() => {
-      this.actions.showAnswer(this.question);
+      this.questionActions.showAnswer(this.question);
     });
   }
 }
