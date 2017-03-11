@@ -36,6 +36,12 @@ for 6 questions, changed height from 165px to 135 px;
     font-size: 30px;
 }
 
+.unassigned {
+    box-shadow: 0 3px 1px -2px red,
+                0 2px 2px 0 red,
+                0 1px 5px 0 red;
+}
+
 .question-cell {
     display: flex;
 }

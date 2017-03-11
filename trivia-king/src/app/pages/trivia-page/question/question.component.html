@@ -8,7 +8,7 @@
     <md-card class="question-cell question" (click)="changeToAnswer()" *ngSwitchCase="'show_question'">
         <span class="show-question">שאלה:<br>{{question.question}}</span>
     </md-card>
-    <md-card class="question-cell answer" (click)="showQuestionResult()" *ngSwitchCase="'show_answer'">
+    <md-card class="question-cell answer" [class.unassigned]="false" (click)="showQuestionResult()" *ngSwitchCase="'show_answer'">
         <span class="show-answer">תשובה:<br>{{question.answer}}</span>
     </md-card>
 </div>
