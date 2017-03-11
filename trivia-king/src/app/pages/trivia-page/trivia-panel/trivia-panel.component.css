@@ -8,8 +8,13 @@
 }
 
 .category-name {
+    line-height: 24px;
     font-size: 24px;
     font-weight: bold;
-    height: 50px;
+    height: 100px;
     margin: 0 10px 0 0;
+}
+
+md-card {
+    max-width: none;
 }
