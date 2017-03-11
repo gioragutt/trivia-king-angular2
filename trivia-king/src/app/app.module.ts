@@ -24,20 +24,15 @@ import { reducers } from './reducers';
 import { AppComponent } from './app.component';
 import { LocalStorageService } from './local-storage.service';
 
-// Toolbar
-import {
-  HeaderScoreBoardComponent,
-  TeamScoreComponent,
-  ToolbarComponent
-} from './toolbar';
+// Application Modules
+import { ToolbarModule } from './toolbar';
+import { TriviaPageModule } from './pages/trivia-page/trivia-page.module';
 
 // Home Page
 import { HomePageComponent } from './pages/home-page';
 
 // Setup Page
 import { SetupPageComponent } from './pages/setup-page';
-
-import { TriviaPageModule } from './pages/trivia-page/trivia-page.module';
 
 // Routes
 import { AppRoutes } from './app.routes';
@@ -47,11 +42,8 @@ import { TeamInfoPreviewComponent } from './pages/setup-page/team-info-preview/t
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderScoreBoardComponent,
-    TeamScoreComponent,
     HomePageComponent,
     SetupPageComponent,
-    ToolbarComponent,
     TeamInfoInputComponent,
     TeamInfoPreviewComponent
   ],
@@ -63,6 +55,7 @@ import { TeamInfoPreviewComponent } from './pages/setup-page/team-info-preview/t
     NgReduxModule,
     AppRoutes,
     TriviaPageModule,
+    ToolbarModule,
   ],
   providers: [QuestionActions, TeamActions, LocalStorageService],
   bootstrap: [AppComponent]
