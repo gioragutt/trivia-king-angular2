@@ -30,17 +30,7 @@ const getInitialState: () => IAppState = () => {
     return {
         questions: MockTriviaData,
         categories: MockTriviaCategories,
-        teams: [
-            {
-                name: 'team1', correctAnswers: []
-            },
-            {
-                name: 'team2', correctAnswers: []
-            },
-            {
-                name: 'team3', correctAnswers: []
-            }
-        ]
+        teams: []
     };
 };
 
