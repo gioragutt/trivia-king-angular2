@@ -2,7 +2,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { TriviaQuestion } from '../../../model';
 import { QuestionActions } from '../../../actions';
 import { MdDialog } from '@angular/material';
-import { ShowAnswerDialogComponent } from '../index';
+import { ModalDialogComponent, TrkModalDialogConfig } from '../../../shared';
 
 @Component({
   selector: 'trk-question',
@@ -15,7 +15,12 @@ export class QuestionComponent {
   constructor(private actions: QuestionActions, public dialog: MdDialog) { }
 
   showIsOkToShowAnswerDialog(callback) {
-    const dialogRef = this.dialog.open(ShowAnswerDialogComponent);
+    const config: TrkModalDialogConfig = {
+      title: 'שאלה',
+      options: { 'כן': true, 'לא': false },
+      direction: 'rtl'
+    };
+    const dialogRef = this.dialog.open(ModalDialogComponent, { data: config });
     dialogRef.afterClosed().subscribe(result => {
       if (result === true) {
         callback();
