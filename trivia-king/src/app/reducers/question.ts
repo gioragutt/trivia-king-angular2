@@ -4,7 +4,7 @@ import { QuestionActions } from '../actions';
 
 const updateQuestion = (state: TriviaQuestions, action: Action, update: any): TriviaQuestions => {
     return state.map((question: TriviaQuestion, index: number): TriviaQuestion => {
-        if (question === action.payload.question) {
+        if (question.id === action.payload.question.id) {
             return updateObject(action.payload.question, update);
         }
         return question;

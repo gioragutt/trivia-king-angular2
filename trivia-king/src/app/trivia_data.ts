@@ -21,9 +21,11 @@ export const MockTriviaCategories: string[] = function() {
 
 export const MockTriviaData: TriviaQuestions = function() {
     const questions: TriviaQuestions = [];
+    var id = 0;
     MockTriviaCategories.forEach((category: string, index: number) => {
         for (let i = 1; i <= 5; ++i) {
             questions.push({
+                id: id++,
                 score: 100 * i,
                 answer: stringOfRandomSizeBetween(10, 50),
                 question: stringOfRandomSizeBetween(10, 50),
