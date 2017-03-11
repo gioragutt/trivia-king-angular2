@@ -14,12 +14,12 @@ export class LocalStorageService {
   static loadFromLocalStorage<T>(name: string): T | undefined {
     try {
       const serialized = localStorage.getItem(name);
-      if (serialized === null || serialized === undefined) {
+      if (serialized === null || serialized === undefined || serialized === 'undefined') {
         return undefined;
       }
 
       return <T>JSON.parse(serialized);
-    } catch(err) {
+    } catch (err) {
       console.log(err);
       return undefined;
     }
