@@ -27,27 +27,18 @@ import { LocalStorageService } from './local-storage.service';
 // Application Modules
 import { ToolbarModule } from './toolbar';
 import { TriviaPageModule } from './pages/trivia-page/trivia-page.module';
+import { SetupPageModule } from './pages/setup-page/setup-page.module';
 
 // Home Page
 import { HomePageComponent } from './pages/home-page';
 
-// Setup Page
-import { SetupPageComponent } from './pages/setup-page';
-
 // Routes
 import { AppRoutes } from './app.routes';
-import { TeamInfoInputComponent } from './pages/setup-page/team-info-input/team-info-input.component';
-import { TeamInfoPreviewComponent } from './pages/setup-page/team-info-preview/team-info-preview.component';
-import { TeamsManagementComponent } from './pages/setup-page/teams-management/teams-management.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    SetupPageComponent,
-    TeamInfoInputComponent,
-    TeamInfoPreviewComponent,
-    TeamsManagementComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +49,7 @@ import { TeamsManagementComponent } from './pages/setup-page/teams-management/te
     AppRoutes,
     TriviaPageModule,
     ToolbarModule,
+    SetupPageModule,
   ],
   providers: [QuestionActions, TeamActions, LocalStorageService],
   bootstrap: [AppComponent]
