@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { MdSnackBar } from '@angular/material';
+import { MdSnackBar, MdDialog } from '@angular/material';
+import { TrkModalDialogComponent, TrkModalDialogConfig } from '../shared';
+import { LocalStorageService } from '../local-storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'trk-toolbar',
@@ -7,7 +10,26 @@ import { MdSnackBar } from '@angular/material';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent {
-  constructor(public snackBar: MdSnackBar) { }
+  constructor(
+    private snackBar: MdSnackBar,
+    private dialog: MdDialog,
+    private router: Router
+  ) { }
+
+  resetGame() {
+    const config: TrkModalDialogConfig = {
+      title: 'איפוס המשחק',
+      body: 'אתה בטוח שתרצה לאפס את המשחק? באמת באמת בטוח?!',
+      options: { 'כן': true, 'לא': false },
+      direction: 'rtl'
+    };
+    const dialogRef = this.dialog.open(TrkModalDialogComponent, { data: config });
+    dialogRef.afterClosed().filter(retval => retval === true).subscribe(() => {
+      LocalStorageService.removeFromLocalStorage('state');
+      this.router.navigate(['/home']);
+      window.location.reload();
+    });
+  }
 
   openCredit() {
     this.snackBar.open('נכתב על ידי: גיורא גוטצייט ורון גרין', 'סגור', {
