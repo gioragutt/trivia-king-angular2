@@ -54,6 +54,7 @@ export class QuestionComponent {
   changeToAnswer() {
     this.showIsOkToShowAnswerDialog(() => {
       this.questionActions.showAnswer(this.question);
+      this.showQuestionResult();
     });
   }
 }
