@@ -2,8 +2,8 @@ import { Component} from '@angular/core';
 import { MdDialogRef } from '@angular/material';
 
 export class TrkModalDialogConfig {
-  title: string;
-  options: { [name: string]: string | boolean | number } = { };
+  title?: string = '';
+  options?: { [name: string]: any } = { };
   body?: string = '';
   direction?: 'rtl' | 'ltr' = 'ltr';
 }
@@ -13,10 +13,10 @@ export class TrkModalDialogConfig {
   templateUrl: './modal-dialog.component.html',
   styleUrls: ['./modal-dialog.component.css']
 })
-export class ModalDialogComponent {
+export class TrkModalDialogComponent {
   config: TrkModalDialogConfig;
 
-  constructor(public dialogRef: MdDialogRef<ModalDialogComponent>) {
+  constructor(public dialogRef: MdDialogRef<TrkModalDialogComponent>) {
     const config = <TrkModalDialogConfig>dialogRef.config.data;
     if (config === undefined) {
       console.log('Received undefined configuration for the modal');
