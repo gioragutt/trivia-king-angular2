@@ -7,7 +7,7 @@
       בחר בקבוצה שתקבל את <b>{{question.score}}</b> הנקודות:
       <!--<br>-->
       <md-select placeholder="קבוצה שענתה נכונה" [(ngModel)]="selectedTeam">
-        <md-option *ngFor="let team of teams$ | async" [value]="team.name">{{ team.name }}</md-option>
+        <md-option *ngFor="let team of query.teams$ | async" [value]="team.name">{{ team.name }}</md-option>
       </md-select>
     </div>
   </div>
