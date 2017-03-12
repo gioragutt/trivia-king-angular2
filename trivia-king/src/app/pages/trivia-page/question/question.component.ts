@@ -13,6 +13,8 @@ import { QuestionResultDialogComponent, TrkQuestionResultDialogConfig } from '..
 })
 export class QuestionComponent {
   @Input() question: TriviaQuestion;
+  @Input() isAssigned: boolean;
+
   constructor(
     private questionActions: QuestionActions,
     private teamActions: TeamActions,

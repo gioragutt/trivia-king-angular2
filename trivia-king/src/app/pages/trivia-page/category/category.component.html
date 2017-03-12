@@ -1,5 +1,5 @@
 <div class="category-container">
     <div class="question-container">
-        <trk-question *ngFor="let question of questions" [question]="question"></trk-question>
+        <trk-question *ngFor="let question of questions" [question]="question" [isAssigned]="query.isQuestionAssigned(question) | async"></trk-question>
     </div>
 </div>
