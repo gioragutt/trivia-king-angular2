@@ -6,7 +6,7 @@
         <span class="show-score">{{question.score}}</span>
     </md-card>
     <md-card class="question-cell question" (click)="changeToAnswer()" *ngSwitchCase="'show_question'">
-        <span class="show-question">שאלה:<br>{{question.question}}</span>
+        <span class="show-question">{{question.question}}</span>
     </md-card>
     <md-card class="question-cell answer" [class.unassigned]="!isAssigned" (click)="showQuestionResult()" *ngSwitchCase="'show_answer'">
         <span class="show-answer">תשובה:<br>{{question.answer}}</span>

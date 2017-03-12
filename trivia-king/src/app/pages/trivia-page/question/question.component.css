@@ -24,16 +24,15 @@ for 6 questions, changed height from 165px to 135 px;
 
 .show-question {
     color: white;
-}
-
-.show-question {
     font-size: 20px;
     line-height: 20px;
-    padding-top: 5px;
+    margin: auto;
 }
 
 .show-answer {
-    font-size: 30px;
+    font-size: 28px;
+    line-height: 28px;
+    margin: auto;
 }
 
 .unassigned {
