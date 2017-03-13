@@ -1,6 +1,6 @@
 .mat-card {
     max-width: none;
-    height: 165px;
+    height: 135px;
     padding: 0px 12px;
     margin: 10px 10px 10px 0px;
 }
@@ -18,7 +18,7 @@ for 6 questions, changed height from 165px to 135 px;
 
 .show-score {
     font-size: 72px;
-    line-height: 165px;
+    line-height: 135px;
     color: white;
 }
 
