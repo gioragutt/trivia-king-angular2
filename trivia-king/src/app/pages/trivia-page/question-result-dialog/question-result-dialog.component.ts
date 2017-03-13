@@ -27,7 +27,11 @@ export class QuestionResultDialogComponent {
         .subscribe((t: TriviaTeam) => this.selectedTeam = t.name);
    }
 
-   questionContent(): string {
-     return this.question.type === 'image' ? 'תמונה' : this.question.question;
-   }
+  isText(): boolean {
+    return this.question.type === 'text';
+  }
+
+  isImage(): boolean {
+    return this.question.type === 'image';
+  }
 };
