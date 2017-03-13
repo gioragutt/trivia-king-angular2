@@ -1,14 +1,14 @@
 <div [ngSwitch]="question.state">
-    <md-card class="question-cell score" (click)="changeToQuestion()" *ngSwitchDefault>
-        <span class="show-score">{{question.score}}</span>
-    </md-card>
     <md-card class="question-cell score" (click)="changeToQuestion()" *ngSwitchCase="'hidden'">
         <span class="show-score">{{question.score}}</span>
     </md-card>
     <md-card class="question-cell question" (click)="changeToAnswer()" *ngSwitchCase="'show_question'">
-        <span class="show-question">{{question.question}}</span>
+        <span class="show-question">{{questionContent()}}</span>
     </md-card>
     <md-card class="question-cell answer" [class.unassigned]="!isAssigned" (click)="showQuestionResult()" *ngSwitchCase="'show_answer'">
         <span class="show-answer">תשובה:<br>{{question.answer}}</span>
+    </md-card>
+    <md-card class="question-cell score" (click)="changeToQuestion()" *ngSwitchDefault>
+        <span class="show-score">{{question.score}}</span>
     </md-card>
 </div>

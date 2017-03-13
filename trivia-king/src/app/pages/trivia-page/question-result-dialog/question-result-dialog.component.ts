@@ -26,4 +26,8 @@ export class QuestionResultDialogComponent {
         .filter((t: TriviaTeam) => t !== undefined)
         .subscribe((t: TriviaTeam) => this.selectedTeam = t.name);
    }
-}
+
+   questionContent(): string {
+     return this.question.type === 'image' ? 'תמונה' : this.question.question;
+   }
+};

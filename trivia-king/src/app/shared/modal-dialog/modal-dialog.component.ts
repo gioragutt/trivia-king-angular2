@@ -2,10 +2,11 @@ import { Component} from '@angular/core';
 import { MdDialogRef } from '@angular/material';
 
 export class TrkModalDialogConfig {
-  title?: string = '';
-  options?: { [name: string]: any } = { };
-  body?: string = '';
-  direction?: 'rtl' | 'ltr' = 'ltr';
+  title? = ''; // title of the dialog
+  options?: { [name: string]: any } = { }; // options: map between (button text) and (return value on dialog.afterClosed)
+  content? = ''; // content of the dialog - if type is image, content is considered to be the image path
+  type?: 'text' | 'large-text' | 'image' = 'text'; // type of the dialog body
+  direction?: 'rtl' | 'ltr' = 'ltr'; // direction of the dialog
 }
 
 @Component({
@@ -22,5 +23,17 @@ export class TrkModalDialogComponent {
       console.log('Received undefined configuration for the modal');
     }
     this.config = config;
+  }
+
+  isText(): boolean {
+    return this.config.type === 'text' || this.config.type === 'large-text';
+  }
+
+  isImage(): boolean {
+    return this.config.type === 'image';
+  }
+
+  isLargeText(): boolean {
+    return this.config.type === 'large-text';
   }
 }

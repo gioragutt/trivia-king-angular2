@@ -19,9 +19,10 @@ export class ToolbarComponent {
   resetGame() {
     const config: TrkModalDialogConfig = {
       title: 'איפוס המשחק',
-      body: 'אתה בטוח שתרצה לאפס את המשחק? באמת באמת בטוח?!',
+      content: 'אתה בטוח שתרצה לאפס את המשחק? באמת באמת בטוח?!',
       options: { 'כן': true, 'לא': false },
-      direction: 'rtl'
+      direction: 'rtl',
+      type: 'text',
     };
     const dialogRef = this.dialog.open(TrkModalDialogComponent, { data: config });
     dialogRef.afterClosed().filter(retval => retval === true).subscribe(() => {

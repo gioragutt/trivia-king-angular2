@@ -21,17 +21,36 @@ export class QuestionComponent {
     private dialog: MdDialog
   ) { }
 
-  showIsOkToShowAnswerDialog(callback) {
-    const config: TrkModalDialogConfig = {
-      title: 'שאלה',
-      body: 'האם להציג את הפתרון?',
+  getDialogConfig(): TrkModalDialogConfig {
+    if (this.question.type === 'image') {
+      return {
+        title: 'התמונה - האם להמשיך לפתרון?',
+        content: this.question.question,
+        options: { 'כן': true, 'לא': false },
+        direction: 'rtl',
+        type: 'image'
+      };
+    }
+
+    return {
+      title: 'השאלה - האם להציג את הפתרון?',
+      content: this.question.question,
       options: { 'כן': true, 'לא': false },
-      direction: 'rtl'
+      direction: 'rtl',
+      type: 'large-text'
     };
+  }
+
+  showIsOkToShowAnswerDialog(callback) {
+    const config = this.getDialogConfig();
     const dialogRef = this.dialog.open(TrkModalDialogComponent, { data: config });
     dialogRef.afterClosed().filter(retval => retval === true).subscribe(result => {
       callback();
     });
+  }
+
+  questionContent(): string {
+     return this.question.type === 'image' ? 'תמונה' : this.question.question;
   }
 
   showQuestionResult() {
@@ -51,6 +70,7 @@ export class QuestionComponent {
 
   changeToQuestion() {
     this.questionActions.showQuestion(this.question);
+    this.changeToAnswer();
   }
 
   changeToAnswer() {

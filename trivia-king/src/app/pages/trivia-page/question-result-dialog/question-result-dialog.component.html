@@ -1,7 +1,7 @@
 <div *ngIf="question" dir="rtl">
   <h1 md-dialog-title>בחירת קבוצה</h1>
   <div md-dialog-content>
-    <h6><b>השאלה הייתה:</b> {{question.question}}</h6>
+    <h6><b>השאלה הייתה:</b> {{questionContent()}}</h6>
     <h6><b>התשובה היא:</b> {{question.answer}}</h6>
     <div>
       בחר בקבוצה שתקבל את <b>{{question.score}}</b> הנקודות:
