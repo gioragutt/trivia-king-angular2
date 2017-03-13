@@ -1,12 +1,14 @@
 export type TriviaQuestionState = 'hidden' | 'show_question' | 'show_answer';
+export type TriviaQuestionType = 'text' | 'image';
 
-export interface TriviaQuestion {
+export class TriviaQuestion {
     id: number;
     question: string;
     answer: string;
     category: string;
     score: number;
-    state?: TriviaQuestionState;
+    type?: TriviaQuestionType = 'text';
+    state?: TriviaQuestionState = 'hidden';
 };
 
 export type TriviaQuestions = TriviaQuestion[];
